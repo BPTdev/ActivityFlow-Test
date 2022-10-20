@@ -9,7 +9,7 @@ const boxStyle = {
   cursor: "grab",
 };
 
-export const cardsData: Card[] = [
+export const cardsData = [
   { id: 1, color: "#4caf50", title: "Carte 1", completionLevel: 100 },
   { id: 2, title: "Carte 2", completionLevel: 100 },
   { id: 3, title: "Carte 3.1", completionLevel: 90 },
@@ -32,28 +32,33 @@ const DraggableBox = ({ id }) => {
     </Draggable>
   );
 };
-
+function boxGenerate() {
+  
+  cardsData.map((id) => {
+    <>
+      <P>SDFSDF</P>
+      <DraggableBox id={"{id}"} />
+    </>;
+  });
+}
+const linkGenerate = () => {
+  <Xwrapper>
+    <Xarrow
+      start={"start"}
+      end="end"
+      path={"smooth"}
+      labels={
+        <img className="hover" src="./images/trash-bin.png" width="40 px"></img>
+      }
+    />
+  </Xwrapper>;
+};
 const V2Example = () => {
   return (
     <div
       style={{ display: "flex", justifyContent: "space-evenly", width: "100%" }}
     >
-      <Xwrapper>
-        <DraggableBox id={"start"} />
-        <DraggableBox id={"end"} />
-        <Xarrow
-          start={"start"}
-          end="end"
-          path={"smooth"}
-          labels={
-            <img
-              className="hover"
-              src="./images/trash-bin.png"
-              width="40 px"
-            ></img>
-          }
-        />
-      </Xwrapper>
+      <boxGenerate />
     </div>
   );
 };
